@@ -16,3 +16,9 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
+
+test("example test", async ({ page }) => {
+  await page.goto("https://example.com");
+  const title = page.locator("h1");
+  await expect(title).toHaveText("Example Domain");
+});
